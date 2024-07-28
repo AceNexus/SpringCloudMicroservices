@@ -1,0 +1,21 @@
+# 忽略編譯後的文件
+target/
+
+# 忽略 IDEA 和 Eclipse 配置文件
+.idea/
+*.iml
+*.class
+
+# 忽略 Maven 的輸出
+*.jar
+*.war
+*.ear
+
+# 忽略測試結果
+maven-status/
+*.lst
+
+# 忽略其他不需要的文件
+*.log
+*.tmp
+*.swp
