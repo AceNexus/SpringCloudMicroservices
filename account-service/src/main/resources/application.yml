@@ -7,7 +7,7 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/account?serverTimezone=Asia/Taipei&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/ecommerce_account?serverTimezone=Asia/Taipei&characterEncoding=utf-8
     username: root
     password: password
 
