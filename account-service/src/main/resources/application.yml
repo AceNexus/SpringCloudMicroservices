@@ -11,3 +11,8 @@ spring:
     password: password
   jpa:
     show-sql: true
+
+eureka:
+  client: # 註冊到 eureka 註冊中心
+    serviceUrl:
+      defaultZone: http://localhost:7001/eureka/
