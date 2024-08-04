@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"account\": \"user01\",\r\n    \"password\": \"password\",\r\n    \"email\": \"user01@example.com\",\r\n    \"phone\": \"0912345678\"\r\n}\r\n",
+							"raw": "{\r\n    \"userAccount\": \"userAccount1\",\r\n    \"userName\": \"userName1\",\r\n    \"password\": \"password\",\r\n    \"email\": \"user01@example.com\",\r\n    \"phone\": \"0912345678\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
