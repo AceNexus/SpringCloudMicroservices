@@ -1,4 +1,4 @@
-package org.ecommerce.account.util.HttpResult;
+package org.ecommerce.common.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,19 +13,13 @@ import java.time.Instant;
 @Accessors(chain = true)
 public class ApiResponse<T> {
 
-    private String timestamp;
+    private Instant timestamp;
     private int status;
     private String message;
     private T data;
 
-    public ApiResponse(int status, String message, T data) {
-        this.status = status;
-        this.message = message;
-        this.data = data;
-    }
-
     public static <T> ApiResponse<T> create(int status, String message, T data) {
-        return new ApiResponse<>(Instant.now().toString(), status, message, data);
+        return new ApiResponse<>(Instant.now(), status, message, data);
     }
 
 }

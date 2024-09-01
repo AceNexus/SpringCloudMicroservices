@@ -5,7 +5,7 @@ import org.ecommerce.account.dto.user.UserRegisterRequest;
 import org.ecommerce.account.dto.user.UserRegisterResponse;
 import org.ecommerce.account.model.Users;
 import org.ecommerce.account.service.UsersService;
-import org.ecommerce.account.util.HttpResult.ApiResponse;
+import org.ecommerce.common.utils.ApiResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

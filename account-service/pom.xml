@@ -12,9 +12,15 @@
 
     <artifactId>account-service</artifactId>
     <description>帳號系統</description>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
 
     <dependencies>
+
+        <!-- common -->
+        <dependency>
+            <groupId>org.ecommerce</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
 
         <!-- junit -->
         <dependency>
