@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+import static org.ecommerce.common.utils.ApiStatusCode.SUCCESS;
+
 @Service
 public class UsersServiceImpl implements UsersService {
 
@@ -43,9 +45,13 @@ public class UsersServiceImpl implements UsersService {
                     .setUserName(savedUser.getUserName())
                     .setIsActive(savedUser.getIsActive())
                     .setCreatedAt(savedUser.getCreatedAt());
-            return new ResponseEntity<>(ApiResponse.create(HttpStatus.CREATED.value(), "User registered successfully", response), HttpStatus.CREATED);
+
+            return ResponseEntity.status(HttpStatus.CREATED)
+                    .body(new ApiResponse<>(SUCCESS, "User registered successfully", response));
+
         } catch (Exception ex) {
-            return new ResponseEntity<>(ApiResponse.create(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getMessage(), null), HttpStatus.CREATED);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(new ApiResponse<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getMessage(), null));
         }
     }
 
