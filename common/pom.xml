@@ -12,7 +12,7 @@
 
     <artifactId>common</artifactId>
     <description>提供服務之間共用的定義與工具</description>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <dependencies>
 
