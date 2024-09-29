@@ -6,6 +6,7 @@ import org.ecommerce.account.dto.user.UserRegisterResponse;
 import org.ecommerce.account.model.Users;
 import org.ecommerce.account.service.UsersService;
 import org.ecommerce.common.utils.ApiResponse;
+import org.ecommerce.common.utils.ApiStatusCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
-
-import static org.ecommerce.common.utils.ApiStatusCode.SUCCESS;
 
 @Service
 public class UsersServiceImpl implements UsersService {
@@ -47,11 +46,11 @@ public class UsersServiceImpl implements UsersService {
                     .setCreatedAt(savedUser.getCreatedAt());
 
             return ResponseEntity.status(HttpStatus.CREATED)
-                    .body(new ApiResponse<>(SUCCESS, "User registered successfully", response));
+                    .body(new ApiResponse<>(ApiStatusCode.SUCCESS, "User registered successfully", response));
 
         } catch (Exception ex) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(new ApiResponse<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getMessage(), null));
+                    .body(new ApiResponse<>(ApiStatusCode.SERVER_ERROR, ex.getMessage(), null));
         }
     }
 
