@@ -12,7 +12,7 @@
 
     <artifactId>eureka-service</artifactId>
     <description>服務註冊中心</description>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <dependencies>
 
@@ -35,5 +35,23 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <finalName>eureka-service</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
