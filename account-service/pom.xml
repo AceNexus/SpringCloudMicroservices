@@ -12,7 +12,7 @@
 
     <artifactId>account-service</artifactId>
     <description>帳號系統</description>
-    <version>1.0.7</version>
+    <version>1.0.8</version>
 
     <dependencies>
 
@@ -119,5 +119,22 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

@@ -81,7 +81,7 @@
 * **6-4. 撰寫 Dockerfile 文件 (簡單範例)**
   ```text
   FROM openjdk:8-jre-slim
-  COPY eureka-service.jar eureka-service.jar
+  COPY eureka-service*.jar ./eureka-service.jar
   ENTRYPOINT ["java", "-jar", "eureka-service.jar"]
   ```
 * **6-5. 建構 Docker 映像檔**
