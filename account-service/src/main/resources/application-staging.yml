@@ -1,0 +1,35 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: account-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ecommerce_account?serverTimezone=Asia/Taipei&characterEncoding=utf-8
+    username: root
+    password: password
+  jpa:
+    show-sql: true
+
+eureka:
+  client: # 註冊到 eureka 註冊中心
+    serviceUrl:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: account-service # 自定義服務註冊到 eureka 的名稱
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure: # 暴露 info 端點
+        include: info
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: ${spring.application.name}
+    description: application description
